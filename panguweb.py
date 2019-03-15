@@ -12,10 +12,8 @@ os.system("docker stop %s" %(rongqi))
 os.system("docker rm %s" %(rongqi))
 #删除当前镜像
 os.system("docker rmi %s" %(rongqi))
-#指定目录
-os.system("cd /wwwroot/PanguVideo")
 #创建镜像
-os.system("docker image build -t %s ." %(rongqi))
+os.system("docker image build -t /wwwroot/PanguVideo/ %s ." %(rongqi))
 #运行容器
 os.system("docker run --name=%s -p 7777:80 -d %s" %(rongqi,rongqi))
 
